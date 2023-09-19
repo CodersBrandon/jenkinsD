@@ -1,7 +1,7 @@
 package edu.uagrm.hotelhub.stepDefinitions;
 
-import edu.uagrm.hotelhub.model.Hotel;
-import edu.uagrm.hotelhub.service.HotelServicio;
+import edu.uagrm.hotelhub.modelos.Hotel;
+import edu.uagrm.hotelhub.servicios.HotelServicio;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -40,9 +40,8 @@ public class BuscarHotelStep {
         for( Hotel hotel : hotelesList){
             System.out.println(hotel.getNombre());
             assertNotNull(hotel.getNombre());
-            assertNotNull(hotel.getDirecion());
-            assertNotNull(hotel.getPrecioPorNoche());
-            assertNotNull(hotel.getCalificacion());
+            assertNotNull(hotel.getDireccion());
+            assertNotNull(hotel.getEstrellas());
         }
     }
 
