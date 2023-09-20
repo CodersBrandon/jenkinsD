@@ -17,6 +17,7 @@ public class ClienteControlador {
 
     @GetMapping
     public ResponseEntity<List<Cliente>> obtenerTodos() {
+        //comentario
         return ResponseEntity.ok(clienteServicio.obtenerTodos());
     }
 
