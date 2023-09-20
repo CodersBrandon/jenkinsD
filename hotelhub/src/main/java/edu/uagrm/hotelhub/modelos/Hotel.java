@@ -2,10 +2,8 @@ package edu.uagrm.hotelhub.modelos;
 
 import lombok.Data;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.List;
 
 @Data
 @Entity
@@ -19,6 +17,9 @@ public class Hotel {
     private String ciudad;
     private String pais;
     private int estrellas;
+
+    @OneToMany(mappedBy = "hotel")
+    private List<Habitacion> habitaciones;
 
     public Hotel(){}
 

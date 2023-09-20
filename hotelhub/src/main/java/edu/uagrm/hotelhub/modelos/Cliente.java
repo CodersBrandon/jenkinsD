@@ -2,10 +2,8 @@ package edu.uagrm.hotelhub.modelos;
 
 import lombok.Data;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.List;
 
 @Data
 @Entity
@@ -19,4 +17,6 @@ public class Cliente {
     private String email;
     private String telefono;
 
+    @OneToMany(mappedBy = "cliente")
+    private List<Reserva> reservas;
 }
