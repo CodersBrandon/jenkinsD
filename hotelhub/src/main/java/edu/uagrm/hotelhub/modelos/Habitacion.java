@@ -21,6 +21,4 @@ public class Habitacion {
 
     @ManyToOne
     private Hotel hotel;
-
-    // Getters, Setters y otros métodos...
 }

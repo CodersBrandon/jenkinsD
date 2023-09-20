@@ -19,5 +19,4 @@ public class Cliente {
     private String email;
     private String telefono;
 
-    // Getters, Setters y otros métodos...
 }
