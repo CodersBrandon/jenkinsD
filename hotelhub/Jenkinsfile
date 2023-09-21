@@ -1,0 +1,21 @@
+pipeline {
+    agent any
+    stages {
+       /* stage("clone"){
+            steps {
+               // sh "git clone https://gitlab.com/uagrm1/mod5/webhotelhub.git"
+               sh 'ls -ls'
+            }
+        }*/
+        
+        stage("build"){
+            steps {
+                dir('webhotelhub/hotelhub'){
+                    sh 'mvn clean install'
+                }
+                //
+            }
+        }
+    }
+    
+}
