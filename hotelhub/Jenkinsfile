@@ -10,7 +10,7 @@ pipeline {
         
         stage("build"){
             steps {
-                dir('webhotelhub/hotelhub'){
+                dir('hotelhub'){
                     sh 'mvn clean install'
                 }
                 //
