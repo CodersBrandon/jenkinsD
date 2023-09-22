@@ -25,3 +25,18 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+
+cd webhotelhub  
+nvm install v16.14.0
+nvm use 16.14.0
+npm i @angular/cli@15.0.3
+
+npm install
+npm start
+
+rm -rf dist && ng build --configuration=production
+
+ng build --configuration=test
+ng build --configuration=production
+docker build -t renatoapaza/webhotelhub:0.3 --no-cache .

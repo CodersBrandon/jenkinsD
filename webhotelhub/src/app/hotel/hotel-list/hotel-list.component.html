@@ -1,30 +1,49 @@
-<h2>Listado de Hoteles</h2>
-<button routerLink="/hoteles/crear">Crear Nuevo Hotel</button>
-<table>
-    <thead>
-    <tr>
-        <th>ID</th>
-        <th>Nombre</th>
-        <th>Dirección</th>
-        <th>Ciudad</th>
-        <th>País</th>
-        <th>Estrellas</th>
-        <th>Acciones</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr *ngFor="let hotel of hoteles">
-        <td>{{ hotel.id }}</td>
-        <td>{{ hotel.nombre }}</td>
-        <td>{{ hotel.direccion }}</td>
-        <td>{{ hotel.ciudad }}</td>
-        <td>{{ hotel.pais }}</td>
-        <td>{{ hotel.estrellas }}</td>
-        <td>
-            <button routerLink="/hoteles/{{ hotel.id }}">Ver</button>
-            <button routerLink="/hoteles/editar/{{ hotel.id }}">Editar</button>
-            <!--<button (click)="onDelete(hotel.id)">Eliminar</button>-->
-        </td>
-    </tr>
-    </tbody>
-</table>
+
+<!-- hotel.component.html -->
+<div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h1 class="my-4">Gestión de Hoteles</h1>
+      </div>
+    </div>
+
+
+    <!-- Tabla para mostrar la lista de hoteles -->
+    <div class="row mt-5">
+        <div class="col-md-12 text-right">
+            <button routerLink="/hotel" class="btn btn-primary">Nuevo Hotel</button>
+        </div>
+        <div class="clearfix">&nbsp;    </div>
+        <div class="col-md-12">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Dirección</th>
+                <th>Ciudad</th>
+                <th>País</th>
+                <th>Estrellas</th>
+                <th>Acciones</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let hotel of hoteles">
+                <td>{{ hotel.id }}</td>
+                <td>{{ hotel.nombre }}</td>
+                <td>{{ hotel.direccion }}</td>
+                <td>{{ hotel.ciudad }}</td>
+                <td>{{ hotel.pais }}</td>
+                <td>{{ hotel.estrellas }}</td>
+                <td>
+                    <!--
+                    <button routerLink="/hoteles/{{ hotel.id }}">Ver</button>
+                    <button routerLink="/hoteles/editar/{{ hotel.id }}">Editar</button>
+                   <button (click)="onDelete(hotel.id)">Eliminar</button>-->
+                </td>
+            </tr>
+            </tbody>
+        </table>
+      </div>
+    </div>
+</div>
