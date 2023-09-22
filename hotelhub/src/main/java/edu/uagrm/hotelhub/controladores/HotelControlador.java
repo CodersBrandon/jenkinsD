@@ -2,12 +2,15 @@ package edu.uagrm.hotelhub.controladores;
 
 import edu.uagrm.hotelhub.modelos.Hotel;
 import edu.uagrm.hotelhub.servicios.HotelServicio;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@Tag(name = "HotelHub API")
+@CrossOrigin(maxAge = 3600)
 @RestController
 @RequestMapping("/api/hoteles")
 public class HotelControlador {

@@ -1,7 +1,9 @@
 package edu.uagrm.hotelhub;
 
+import org.springdoc.core.GroupedOpenApi;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.Bean;
 
 @SpringBootApplication
 public class WebHotelHubApplication {
@@ -10,4 +12,13 @@ public class WebHotelHubApplication {
 		SpringApplication.run(WebHotelHubApplication.class, args);
 	}
 
+
+	@Bean
+	public GroupedOpenApi publicApi() {
+		return GroupedOpenApi.builder()
+			.group("digitalthinking-spis")
+			.packagesToScan("edu.uagrm.hotelhub")
+			.pathsToMatch("/**")
+			.build();
+	}
 }
