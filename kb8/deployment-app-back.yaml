@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hotelhub-app-back-deployment
+spec:
+  selector:
+   matchLabels:
+    app: hotelhub-app-back
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: hotelhub-app-back
+    spec:
+      containers:
+        - name: hotelhub-app-back
+          image: renatoapaza/hotelhub:0.1
+          imagePullPolicy: Always
+          env:
+            - name: SPRING_PROFILES_ACTIVE
+              value: "prod"
+          ports:
+            - containerPort: 8080
+              name: hotelhubport
