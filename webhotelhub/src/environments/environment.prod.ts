@@ -3,5 +3,5 @@ export const environment = {
     ambiente: "Produccion",
     tiempo_session: 60,
     version: '1.0.1',
-    apiUrl : 'http://localhost:8080/api/'
+    apiUrl : 'http://192.168.49.2:30780/api/'
 };
