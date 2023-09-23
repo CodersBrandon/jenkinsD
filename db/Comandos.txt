@@ -1,0 +1,18 @@
+
+# Aplicar 
+
+cd db/
+
+$ kubectl apply -f secret-dev.yaml
+$ kubectl apply -f secret-pgadmin.yaml
+
+$ kubectl delete -f secret-pgadmin.yaml
+
+
+# Aplicamos todos los archivos
+$ kubectl apply -f ./
+
+# Para Borrar
+$ kubectl delete -f ./
+
+
