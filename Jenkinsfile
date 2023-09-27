@@ -53,7 +53,8 @@
             steps {
                 dir('webhotelhub'){
                     withCredentials(bindings: [string(credentialsId: 'kubernete-jenkis-server-account', variable: 'api_token')]) {
-                            sh 'kubectl --token $api_token --server https://192.168.49.2:8443 --insecure-skip-tls-verify=true apply -f deployment-app-front-jenkins.yaml '
+                        sh 'kubectl --token $api_token --server https://192.168.49.2:8443 --insecure-skip-tls-verify=true delete -f deployment-app-front-jenkins.yaml '
+                        sh 'kubectl --token $api_token --server https://192.168.49.2:8443 --insecure-skip-tls-verify=true apply -f deployment-app-front-jenkins.yaml '
                     }
 
                     echo 'Deploying Container to Kubernetes'
