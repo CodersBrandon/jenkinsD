@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Router } from "@angular/router";
+
 import {environment} from "../environments/environment";
 
 @Component({
@@ -7,7 +9,16 @@ import {environment} from "../environments/environment";
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'webhotelhub';
+
+  constructor(private router: Router) {
+    
+  }
+
+  title = 'Hotel-Hub';
 
   ambiente = environment.ambiente;
+
+  routing(route: string) {
+    this.router.navigateByUrl(route);
+  }
 }
