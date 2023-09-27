@@ -30,6 +30,8 @@
         	  echo 'Login Completed'
             }
         }
+        
+        // Instalar el plugin: Docker Pipeline
         stage('Push Image to Docker Hub') {                     
             steps{
                 script {
@@ -50,13 +52,12 @@
         stage('Deploying Container to Kubernetes') {
             steps {
                 dir('webhotelhub'){
-                    script {
-                        echo " ......... deploy ...... "
-                        kubernetesDeploy(configs: "deployment.yaml", "service.yaml")
-                        echo 'Deploying Container to Kubernetes'
-                    }                             
+                    withCredentials(bindings: [string(credentialsId: 'kubernete-jenkis-server-account', variable: 'api_token')]) {
+                            sh 'kubectl --token $api_token --server https://192.168.49.2:8443 --insecure-skip-tls-verify=true apply -f deployment-app-front-jenkins.yaml '
+                    }
+
+                    echo 'Deploying Container to Kubernetes'
                 }
-                
             }
         }     
     } //stages 
