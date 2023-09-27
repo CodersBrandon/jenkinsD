@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: webhotelhub-app-front-deployment
+spec:
+  selector:
+   matchLabels:
+    app: webhotelhub-app-front
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: webhotelhub-app-front
+    spec:
+      containers:
+        - name: webhotelhub-app-front
+          image: renatoapaza/webhotelhub-front:latest
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 80
+              name: webhotelhubport
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: webhotelhub-app-front-service
+  labels:
+    app: webhotelhub-app-front
+spec:   
+  ports:
+  - name: webhotelhub-app-front
+    port: 80
+    nodePort : 30300 
+  type: NodePort
+  selector:
+    app: webhotelhub-app-front
